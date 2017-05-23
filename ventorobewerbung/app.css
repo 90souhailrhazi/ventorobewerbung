@@ -1,0 +1,990 @@
+﻿body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #EAECEC;
+
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: inline-block;
+
+        height: 100%
+    }
+}
+
+span {
+    font-style:italic ;
+
+  
+}
+#content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0%;
+    left:0%;
+    padding:0;
+        -webkit-align-content: center;
+    align-content: center;
+    }
+
+
+
+
+/* Darstellung von ersten oberen buttom*/
+.button {
+    position: absolute;
+    left:0%;
+    top:0px;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    width: 210px;
+    height: 80px;
+
+   
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #527DB1; 
+    border: none;
+    text-indent:37px;
+    font-size: 25px;
+    cursor: pointer;
+    list-style-type: none;
+
+
+}
+
+
+.button:hover {
+    background-color: #FFFFFF;
+    color: black;
+}
+
+
+/* Darstellung von zweiten oberen buttom*/
+.button2{
+    
+    
+    list-style-type: none;
+    position: absolute;
+    left:210px;
+    top:0px;
+    background-color: #245F99;
+    border:none;
+    font-size: 28px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 80px;
+   
+    text-align:left;
+    
+ 
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+
+    background-color: #2860A4; /* Green */
+    border: none;
+    color: white;
+    white-space: nowrap;
+    text-indent:40px;
+    text-decoration: none;
+    font-size: 30px;
+    float: right;
+    box-sizing: border-box;
+
+}
+
+
+.button2:hover{
+    background-color: #FFFFFF;
+    color: black;
+}
+
+/* Erstellung der ersten Tabellen */
+
+
+ul.links{
+    list-style-type: none;
+    position:absolute;
+    margin: 0;
+    padding: 0;
+    height:800px;
+
+    left:0px;
+    top:80px;
+    width:140px;
+    background-color: #EAECEC;
+    text-align:center;
+    white-space: nowrap;
+    display:block;
+
+}
+
+li a {
+    display: block; 
+    color: #82878B;
+    padding:28px 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    content: url('Menue-Dashboard-inactivepng')
+
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #FFFFFF;
+    color: #21568A;
+    border-style:solid;
+    border-top-style:none;
+    border-right:none;
+    border-left-width:8px;
+    border-bottom-style:none;
+    border-left-color:#21568A;
+    }
+
+
+
+
+
+
+
+
+
+
+ul.test {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height:80px;
+    position: relative;
+    overflow: hidden;
+    background-color:#527DB1;
+    display: block;
+}
+
+#test li {
+    float: left;
+    left: 50%;
+}
+
+#test li a {
+    display: inline-block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.test_home {
+    position: absolute;
+
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    width: 210px;
+    height: 80px;
+    text-align: left;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    text-indent:37px;
+    font-size: 25px;
+    cursor: pointer;
+    list-style-type: none;
+}
+.test_home:hover {
+    background-color:#527DB1;
+    border-style:solid;
+    border-top-style:none;
+    border-right:none;
+    border-left-width:0px;
+    border-bottom-style:none;
+    border-left-color:#527DB1;
+}
+
+
+
+
+.test_btn1 {
+    position: relative;
+    border: none;
+    font-size: 28px;
+    color: black;
+    left:210px;
+    height: 80px;
+    width: 400px;
+    text-align: right;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    list-style-type: none;
+    text-align: right;
+
+}
+
+.test_btn1:hover {
+    background-color:#527DB1;
+    border-style:solid;
+    border-top-style:none;
+    border-right:none;
+    border-left-width:0px;
+    border-bottom-style:none;
+    border-left-color:#527DB1;}
+
+.test_user_name{
+    position: relative;
+
+    border: none;
+    font-size: 15px;
+    height: 80px;
+    text-align: right;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    display: inline;
+    font-size: 25px;
+    cursor: pointer;
+    list-style-type: none;
+    right: 0px;
+    top:0px;
+}
+.test_user_name:hover {
+    background-color:#527DB1;
+    border-style:solid;
+    border-top-style:none;
+    border-right:none;
+    border-left-width:0px;
+    border-bottom-style:none;
+    border-left-color:#527DB1;
+}
+
+.einstellung_click{
+    background-image: url('Header-line.png');
+    background-position:70% 20%;
+ /* <- changed this */
+    box-sizing: border-box;
+    background-repeat:no-repeat;
+    padding-right: 30px;
+    height:80px;
+    position: relative;
+    width:90px;
+
+    border: none;
+
+    cursor: pointer;
+    top:0px;
+}
+
+.einstellung_click:hover {
+    background-color:#527DB1;
+    border-style:solid;
+    border-top-style:none;
+    border-right:none;
+    border-left-width:0px;
+    border-bottom-style:none;
+    border-left-color:#527DB1;**<-----------*/
+
+}
+
+
+.einstellung_click1{
+    background-image: url('Header-Icon-2.png');
+    background-position:70% 20%;
+    box-sizing: border-box;
+    background-repeat:no-repeat;
+    padding-right: 30px;
+    height:80px;
+    position: relative;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+    top:10px;
+}
+
+.einstellung_click1:hover{
+    background-color:#527DB1;
+    border-style:solid;
+    border-top-style:none;
+    border-right:none;
+    border-left-width:0px;
+    border-bottom-style:none;
+    border-left-color:#527DB1;
+
+}
+
+.einstellung_click2{
+    background-image: url('Header-Icon-3.png');
+    background-position:70% 20%;
+ /* <- changed this */
+    box-sizing: border-box;
+    background-repeat:no-repeat;
+    padding-right: 30px;
+    height:80px;
+    position: relative;
+    width: 50px;
+    border: none;
+
+    cursor: pointer;
+    top:10px;
+}
+
+.einstellung_click2:hover{
+    background-color:#527DB1;
+    border-style:solid;
+    border-top-style:none;
+    border-right:none;
+    border-left-width:0px;
+    border-bottom-style:none;
+    border-left-color:#527DB1;
+}
+
+.einstellung_click3{
+    background-image: url('Header-Icon-1.png');
+    background-position:70% 20%;
+    box-sizing: border-box;
+    background-repeat:no-repeat;
+    padding-right: 30px;
+    height:80px;
+    position: relative;
+    border: none;
+    width: 50px;
+    cursor: pointer;
+    top:10px;
+}
+.einstellung_click3:hover{
+    background-color:#527DB1;
+    border-style:solid;
+    border-top-style:none;
+    border-right:none;
+    border-left-width:0px;
+    border-bottom-style:none;
+    border-left-color:#527DB1;/**<-----------*/
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul.right_time {
+    list-style-type: none;
+    position:absolute;
+    left:200px;
+    top:50px;
+    width:500px;
+    display:inline;
+
+    }
+#right_time li  {
+    text-decoration: none;
+    float:left;
+    display: inline; 
+    color: #82878B;
+    font-size: 17px;    
+
+}
+#right_time li a:hover{ 
+   /* background-color: blue;*/
+    color:white;
+}
+
+
+
+.minutes_5 {
+    text-align:center;
+    margin:0px;
+    padding:0px;
+    border-width:1px;
+    border-color:#A7ACAF;
+    padding-top:0px;
+    border-right-style:solid;
+    border-left-style:solid;
+    border-top-style:solid;
+    border-bottom-style:solid;
+    height:30px;
+    width:80px;
+}
+
+.minutes_5:hover {
+    background-color: #2056A8 ;
+    color: white;
+    border-style:none;
+    border-top-style:none;
+    border-right:none;
+    text-decoration-color:black;
+    border-left-color:none;
+}
+.minutes_12 {
+    text-align:center;
+    margin:0px;
+    padding:0px;
+    border-width:1px;
+    border-color:#A7ACAF;
+    padding-top:0px;
+    border-right-style:solid;
+    border-left-style:solid;
+    border-top-style:solid;
+    border-bottom-style:solid;
+    height:30px;
+    width:80px;
+}
+
+.minutes_12:hover {
+    background-color: #2056A8 ;
+    color: white;
+    border-style:none;
+    border-top-style:none;
+    border-right:none;
+    text-decoration-color:black;
+    border-left-color:none;
+}
+.minutes_30 {
+    text-align:center;
+    margin:0px;
+    padding:0px;
+    border-width:1px;
+    border-color:#A7ACAF;
+    padding-top:0px;
+    border-right-style:solid;
+    border-left-style:solid;
+    border-top-style:solid;
+    border-bottom-style:solid;
+    height:30px;
+    width:80px;
+}
+
+.minutes_30:hover {
+    background-color: #2056A8 ;
+    color: white;
+    border-style:none;
+    border-top-style:none;
+    border-right:none;
+    text-decoration-color:black;
+    border-left-color:none;
+}
+
+
+    /* Erstellung der Buttons in der Liste der linken Seite */
+
+.Dash_board_click_off {
+    background-image: url('Menue-Dashboard-inactive.png');
+    background-position:50% 26%;
+    text-align:center;
+    line-height: 83px; /* <- changed this */
+    box-sizing: border-box;
+    background-repeat:no-repeat;
+    padding-left: 20px;
+    height:110px;
+}
+.Dash_board_click_off:hover {
+    background-image: url('Menue-Dashboard-active.png');
+    background-position:50% 26%;
+    background-repeat:no-repeat;
+    line-height: 83px; /* <- changed this */
+    box-sizing: border-box;
+    background-position:50% 26%;
+    padding-left: 20px;
+    height:110px;
+}
+/* Leack Detection System*/
+.Leack_detection_click_off {
+    background-image: url('Menue-Leak-Detection-inactive.png');
+    background-repeat:no-repeat;
+    background-position:50% 26%;
+    padding-left: 20px;
+    height:110px;
+    box-sizing: border-box;
+    text-align:left center;
+}
+.Leack_detection_click_off:hover {
+   background-image: url('Menue-Leak-Detection-active.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    background-position:50% 26%;
+    padding-left: 20px;
+    height:110px;
+}
+/* Scraper Tracking buttom*/
+.scraper_tracking_click_off {
+    background-image: url('Menue-Scraper-Tracking-inactive.png');
+    background-repeat:no-repeat;
+    background-position:50% 26%;
+    padding-left: 20px;
+
+    height:110px;
+    box-sizing: border-box;
+
+}
+
+.scraper_tracking_click_off:hover{
+    background-image: url('Menue-Scraper-Tracking-active.png');
+    background-position:top;
+    background-repeat:no-repeat;
+     background-position:50% 26%;
+    padding-left: 20px;
+    height:110px;
+}
+/* Instrumentation_Analyzer buttom */
+.Instrumentation_analyzer_click_off {
+    background-image: url('Menue-Instrumentation-Analyzer-inactive.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    background-position:50% 26%;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+
+}
+.Instrumentation_analyzer_click_off:hover{
+    background-image: url('Menue-Instrumentation-Analyzer-active.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    background-position:50% 26%;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+
+}
+.hydrolic_profile_off {
+    background-image: url('Hydraulic-Profile.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    background-position:50% 26%;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+
+}
+.hydrolic_profile_off:hover{
+    background-image: url('Hydraulic-Profile_an.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    background-position:50% 26%;
+    padding-left: 10px;
+   box-sizing: border-box;
+
+
+}
+
+/* Pipeline Effencieny buttom */
+.pipeline_effeciency_click_off {
+    background-image: url('Menue-Pipeline-Efficiency-inactive.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    padding-left: 20px;
+     background-position:50% 26%;
+    height:110px;
+
+    box-sizing: border-box;
+    
+}
+.pipeline_effeciency_click_off:hover{
+    background-image: url('Menue-Pipeline-Efficiency-active.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    padding-left: 20px;
+    height:110px;
+    background-position:50% 26%;
+   /* line-height: 83px;  <- changed this */
+    box-sizing: border-box;
+}
+
+/*  Geographical view  */
+.geographical_view_click {
+    background-image: url('Menue-Pipeline-Efficiency-inactive.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    padding-left: 20px;
+     background-position:50% 26%;
+    height:110px;
+
+    box-sizing: border-box;
+    
+}
+.geographical_view_click:hover{
+    background-image: url('Menue-Pipeline-Efficiency-active.png');
+    background-position:top;
+    background-repeat:no-repeat;
+    padding-left: 20px;
+    height:110px;
+    background-position:50% 26%;
+   /* line-height: 83px;  <- changed this */
+    box-sizing: border-box;
+}
+
+
+
+.display_table1 {
+    list-style-type: none;
+    position: absolute;
+    float:left; 
+    margin: 0;
+    padding: 0;
+    height: 500px;
+    left: 210px;
+    top: 130px;
+    width:42%;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+    /* Text Properities*/
+    text-align:left;
+    text-indent:40px;
+    font-size:27px;
+    color:#1B5785;
+    line-height:120%;
+    font-kerning:none;
+    }
+.table_2{
+    list-style-type: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 500px;
+    left: 57%;
+    top: 130px;
+    width: 42%;
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+        /* Text Properities*/
+    text-align:left;
+    text-indent:20px;
+    font-size:27px;
+    color:#1B5785;
+    line-height:120%;
+    font-kerning:none;
+}
+/* Pipline Effinziency table */
+.table_3{
+    list-style-type: none;
+    position: absolute;
+
+    height: 500px;
+    left: 210px;
+    top: 650px;
+    width: 42%;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+    /* Text Properities*/
+    text-align: left;
+    text-indent: 20px;
+    font-size: 27px;
+    color: #1B5785;
+    line-height: 120%;
+    font-kerning: none;
+}
+/*Instrumation table*/
+.table_4 {
+    list-style-type: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 500px;
+    left: 57%;
+    top: 650px;
+    width: 42%;
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+    /* Text Properities*/
+    text-align: left;
+    text-indent: 20px;
+    font-size: 27px;
+    color: #1B5785;
+    line-height: 120%;
+    font-kerning: none;
+}
+.table_leack_detection {
+    list-style-type: none;
+    position: absolute;
+    padding: 0;
+    height: 420px;
+    left: 210px;
+    top: 240px;
+    width: 700px;
+    height:420px;
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+    display: none;
+    /* Text Properities*/
+    text-align: left;
+    text-indent: 20px;
+    font-size: 15px;
+    color: #81868B;
+    line-height: 120%;
+    font-kerning: none;
+}
+
+
+.mass_balance_overview {
+    list-style-type: none;
+    position: absolute;
+    padding: 0;
+    right: 100px;
+    top: 240px;
+    width: 650px;
+    height:420px;
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+    display: inline;
+    /* Text Properities*/
+    text-align: left;
+    text-indent: 20px;
+    font-size: 15px;
+    color: #81868B;
+    line-height: 120%;
+    font-kerning: none;
+}
+.Info_meldung {
+    position: absolute;
+    padding: 0;
+    height: 140px;
+    left: 210px;
+    top: 100px;
+    width: 80%;
+    height:100px;
+    background-color: #F7DFDF;
+    white-space: nowrap;
+    display: inline;
+    /* Text Properities*/
+    text-align: left;
+    text-indent: 40px;
+    font-size: 20px;
+    line-height: 120%;
+    kerning: 0;
+    text-shadow:0px 1px 0px #FFFFFF;
+    color: #B65656;
+    line-height: 120%;
+    padding-top: 20px;
+}
+
+.last_activities {
+    position: absolute;
+    padding: 0;
+    height: 140px;
+    left: 210px;
+    top: 100px;
+    width: 1650px;
+    height:100px;
+    background-color: #ECF1F5;
+    white-space: nowrap;
+    display: inline;
+    /* Text Properities*/
+    text-align: left;
+    text-indent: 40px;
+    font-size: 20px;
+    line-height: 120%;
+    kerning: 0;
+    text-shadow:0px 1px 0px #FFFFFF;
+    color:#3D6584;
+    line-height: 120%;
+    padding-top: 20px;
+}
+.title_instrumentation {
+    list-style-type: none;
+    position: absolute;
+    margin: 15px;
+    padding: 0;
+    height: 500px;
+    left: 240px;
+    top: 250px;
+    width: 650px;
+    height:500px;
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+    display: inline;
+    /* Text Properities*/
+    text-align: left;
+    font-size: 20px;
+    color: #81868B;
+    line-height: 120%;
+    font-kerning: none;
+}
+p {
+    display: inline-flex;
+    text-indent: 40px;
+}
+.diagram{
+    position: absolute;
+    text-align: center;
+    font-size:40px;
+    right:300px;
+    top: 180px;
+    display: inline;
+}
+.effiziency_diagramm {
+    list-style-type: none;
+    position: absolute;
+    padding: 0;
+    height: 500px;
+    left: 210px;
+    top: 250px;
+    width: 80%;
+    height:400px;
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+    display: inline;
+    /* Text Properities*/
+    text-align: left;
+    font-size: 20px;
+    color: #81868B;
+    line-height: 120%;
+    font-kerning: none;
+}
+
+.diagram_eff
+{
+    position: absolute;
+    text-align: center;
+    font-size:40px;
+    left:40%;
+    top: 155px;
+    display: inline;
+    color: #3EAD4B;
+}
+/* Daschboord Effiziency Diagramm */
+.diagram_eff_2
+{
+    position: absolute;
+    text-align: center;
+    font-size:40px;
+    left:15%;
+    top: 200px;
+    display: inline;
+    color: red;
+}
+
+.pipline_overview
+{
+    list-style-type: none;
+    position: absolute;
+    padding: 0;
+    height: 500px;
+    left: 210px;
+    top: 680px;
+    width: 85%;
+    height:400px;
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+    display: inline;
+    /* Text Properities*/
+    text-align: left;
+    font-size: 20px;
+    color: #81868B;
+    line-height: 120%;
+    font-kerning: none;
+}
+
+.Zahl
+{
+    top:70px;
+    left: 100px;
+    display:inline;
+    right: 300px;
+    top:30px;
+    color: #3EAD4B;
+}
+.diagram_test{
+    position: relative;
+    text-align: center;
+    font-size:40px;
+    height:450px;
+    width:90%;
+    right:10px;
+    top: 0%;
+    display: inline-block;}
+
+
+.diagram_1{
+
+    position: relative;
+    text-align: center;
+    font-size:40px;
+    height:450px;
+    width:90%;
+    right:10px;
+    top: 0%;
+    display: inline-block;}
+
+}
+
+
+

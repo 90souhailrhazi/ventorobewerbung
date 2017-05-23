@@ -1,0 +1,865 @@
+
+<html lang="en">
+<head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psipipelines Virtualisation </title>
+    <link rel="stylesheet" href="app.css" type="text/css" media="all" />
+    <link rel="stylesheet" media="screen and (max-width: 1370px)" href="test_media.css" 
+     <script src="app.js"></script>
+    <script src="amcharts/amcharts/amcharts.js"></script>
+    <script src="amcharts/amcharts/serial.js"></script>
+    <script src="amstock/amcharts/amstock.js"></script>
+    <script src="generateChart.js"></script>
+    <script type="text/javascript"  src="jquery-1.12.1.min.js"></script>
+<!-- Load c3.css -->
+    <link href="c3_test.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Bibliotheken für Diagramm -->
+    <script src="D3/d3.min.js" charset="utf-8"></script>
+    <script src="C3/c3.min.js"></script>
+
+         
+  <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+ <script src="amcharts/amcharts/amcharts.js"></script>
+    <script src="amcharts/amcharts/serial.js"></script>
+    <script src="amstock/amcharts/amstock.js"></script>
+<!-- Load c3.css -->
+<link href="MAP_CSS.css" rel="stylesheet" type="text/css"/>
+
+
+
+</head>
+
+<body>
+
+ <div id="content" >
+
+
+<ul id="test" class="test">
+    <li><a class="test_home" >PSI Piplines</a></li>
+    <li><a class="test_btn1" >Dashboord</a></li>   
+    <li style="float:right"><a class="test_user_name" >Benutzer Name</a></li>
+    <li style="float:right"><a class="einstellung_click" ></a></li>
+
+    <li style="float:right"><a class="einstellung_click2" ></a></li>
+    <li style="float:right"><a class="einstellung_click1" ></a></li>
+    <li style="float:right"><a class="einstellung_click3" ></a></li>
+
+</ul>   
+   <div> 
+
+
+
+ <div id=" Test_diagramm" class ="display_table1">Leack Detection System (Test D)</br>
+  <div id="chartdiv"></div> 
+  </div>
+     </div>
+
+
+    <div id="Scraper_tracking" class="table_2"> Scraper Tracking </br>
+        <div id="chartmap"></div>
+    </div>
+    <div id="pipline_effiziency" class="table_3"> Pipeline Effinziency
+ <div id="chart">  </div></div>   
+
+    <div id="instrumentation_analyzer" class="table_4"> Instrumentation Analyzer </br>
+        <div id="" class="diagram">  Diagramm 4 </div>
+    </div>
+
+
+    <ul id="menu_left" class="links">
+        <li id="btn1"><a href="#" class="Dash_board_click_off" onclick="dashboard_click()">Dashboard</a>
+        </li>
+        <li id="btn2"> <a href="#" class="hydrolic_profile_off" onclick="hydrolic_click()">  <br>Hydrolic <br/>Profile </a></li>
+        <li><a href="#" class="Leack_detection_click_off"  onclick="leack_detection_click()"> <br />Leak Detection <br /> System</a></li>
+        <li><a href="#" class="scraper_tracking_click_off"><br />Scraper<br />Tracking</a></li>
+        <li><a href="#" class="Instrumentation_analyzer_click_off"><br />Instrumentation<br />Analyzer</a></li>
+        <li><a href="#" class="pipeline_effeciency_click_off"><br />Piplines<br />Effenciency</a></li>
+    </ul>
+</div>
+
+
+<script  type="text/javascript">
+
+
+
+function myFunction()
+{
+window.open("New Idea mit Aktualisierung.html");;
+}
+
+var Messwert=new Object(); //通过 function修改object
+Messwert.Abstand=new Array();
+Messwert.FoerderDruck=new Array();
+Messwert.ppm=new Array();
+Messwert.ppStat=new Array();
+Messwert.pOpt=new Array();
+Messwert.MAOP=new Array();
+Messwert.pMin=new Array();
+Messwert.pMax=new Array();
+Messwert.pSaved=new Array();
+Messwert.pSlaSetLine=new Array();
+Messwert.pSurgeLine=new Array();
+Messwert.QQm=new Array();
+Messwert.Qpm=new Array();
+Messwert.QQStat=new Array();
+Messwert.pDRA=new Array();
+Messwert.rhoB=new Array();
+Messwert.rhoMW=new Array();
+Messwert.rhoBMW=new Array();
+Messwert.rhoBBatchanalyse=new Array();
+Messwert.rhoBatchanalyse=new Array();
+Messwert.GeoHoeheAnzeige=new Array();
+Messwert.T=new Array();
+Messwert.eta=new Array();
+
+Messwert.Abstand[0]=0;
+
+
+var chartData = generateChartData(); //  aus externe Datei "generateChart.js"
+
+
+
+
+
+
+var chart = AmCharts.makeChart("chartdiv", {
+    "type": "serial",
+    "theme": "light",
+    "legend": {
+        "useGraphSettings": true,
+        "markerSize": 10
+    },
+    "dataProvider": chartData,
+    "synchronizeGrid":true,
+    "valueAxes": [{
+        "id":"v1", // Druck in Einheit 10^5Pa
+        "axisColor": "#000099",
+        "axisThickness": 2,
+        "axisAlpha": 1,
+        "position": "left",
+        "title": "Druck in 10^5 Pa",
+        "titleColor": "#000099",
+        "color":"#000099"
+    }, {
+        "id":"v2",  //  Fluss in 10^(-2) m^3/s
+        "axisColor": "#00ff00",
+        "axisThickness": 2,
+        "axisAlpha": 1,
+        "position": "right",
+        "title": "Fluss in 10^(-2) m^3/s",
+        "titleColor": "#00ff00",
+        "color":"#00ff00"
+    }, {
+        "id":"v3",  //Dichte kg/m^3
+        "axisColor": "#ff9900",
+        "axisThickness": 2,
+        "gridAlpha": 0,
+        "offset": 50,
+        "axisAlpha": 1,
+        "position": "left",
+        "title": "Dichte in kg/m^3",
+        "titleColor": "#ff9900",
+        "color":"#ff9900"
+    },{
+        "id":"v4",  // Height in m
+        "axisColor": "#ff3300",
+        "axisThickness": 2,
+        "gridAlpha": 0,
+        "offset": 50,
+        "axisAlpha": 2,
+        "position": "right",
+        "title": "Height in m",
+        "titleColor": "#ff3300",
+        "color":"#ff3300"
+    },{
+        "id":"v5",  // Temperatur in K
+        "axisColor": "#ff0066",
+        "axisThickness": 2,
+        "gridAlpha": 0,
+        "offset": 200,
+        "axisAlpha": 1,
+        "position": "right",
+        "title": "Temperatur in K",
+        "titleColor": "#ff0066",
+        "color":"#ff0066"
+    },{
+        "id":"v6",  // Flaeche  in m^2/s
+        "axisColor": "#660066",
+        "axisThickness": 2,
+        "gridAlpha": 0,
+        "offset": 100,
+        "axisAlpha": 1,
+        "position": "right",
+        "title": "Flaeche  in 10^(-5) m^2/s",
+        "titleColor": "#660066",
+        "color":"#660066"
+    },{
+        "id":"v7",  // without Unity
+        "axisColor": "#3399ff",
+        "axisThickness": 2,
+        "gridAlpha": 0,
+        "offset": 40,
+        "axisAlpha": 1,
+        "position": "right",
+        "title": "pDRA keine Einheit",
+        "titleColor": "#3399ff",
+        "color":"#3399ff"
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    ],
+    "graphs": [{
+        "valueAxis": "v1",
+        "lineColor": "#003366",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "FoerderDruck",
+        "valueField": "FoerderDruck",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v1",
+        "lineColor": "#006666",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "ppm",
+        "valueField": "ppm",
+        "fillAlphas": 0,
+        "hidden":true
+    }, {
+        "valueAxis": "v1",
+        "lineColor": "#666699",
+       "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "ppStat",
+        "valueField": "ppStat",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v1",
+        "lineColor": "#339966",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "pOpt",
+        "valueField": "pOpt",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v1",
+        "lineColor": "#00ffff",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "MAOP",
+        "valueField": "MAOP",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v1",
+        "lineColor": "#6600ff",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "pMin",
+        "valueField": "pMin",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v1",
+        "lineColor": "#9999ff",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "pMax",
+        "valueField": "pMax",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v1",
+        "lineColor": "#660066",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "pSaved",
+        "valueField": "pSaved",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v1",
+        "lineColor": "#669900",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "pSlaSetLine",
+        "valueField": "pSlaSetLine",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v1",
+        "lineColor": "#ff3399",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "pSurgeLine",
+        "valueField": "pSurgeLine",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v2",
+        "lineColor": "#666699",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "QQm",
+        "valueField": "QQm",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v2",
+        "lineColor": "#993366",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "Qpm",
+        "valueField": "Qpm",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v2",
+        "lineColor": "#999966",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "QQStat",
+        "valueField": "QQStat",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v7",
+        "lineColor": "#ff6600",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "pDRA",
+        "valueField": "pDRA",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v3",
+        "lineColor": "#cc0066",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "rhoB",
+        "valueField": "rhoB",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v3",
+        "lineColor": "#cc9900",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "rhoMW",
+        "valueField": "rhoMW",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v3",
+        "lineColor": "#ff3300",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "rhoBMW",
+        "valueField": "rhoBMW",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v3",
+        "lineColor": "#663300",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "rhoBBatchanalyse",
+        "valueField": "rhoBBatchanalyse",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v3",
+        "lineColor": "#cc3300",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "rhoBatchanalyse",
+        "valueField": "rhoBatchanalyse",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v4",
+        "lineColor": "#993333",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "GeoHoeheAnzeige",
+        "valueField": "GeoHoeheAnzeige",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v5",
+        "lineColor": "#ffccff",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "T",
+        "valueField": "T",
+        "fillAlphas": 0,
+        "hidden":true
+    },{
+        "valueAxis": "v6",
+        "lineColor": "#993300",
+        "bullet": "round",
+        "bulletBorderThickness": 1,
+        "hideBulletsCount": 30,
+        "title": "eta",
+        "valueField": "eta",
+        "fillAlphas": 0,
+        "hidden":true
+    }],
+    "chartScrollbar": {},
+    "chartCursor": {
+        "cursorPosition": "mouse"
+    },
+    "categoryField": "Abstand",
+    "categoryAxis": {
+        "parseAbstands": false,
+        "axisColor": "#DADADA",
+        "minorGridEnabled": true,
+        "title": "Abstand in 10^3 km ",
+        
+    },
+    "export": {
+        "enabled": false,
+        "position": "bottom-right"
+     }
+});
+
+chart.addListener("dataUpAbstandd", zoomChart);
+zoomChart();
+
+
+
+
+
+function zoomChart(){
+    chart.zoomToIndexes(chart.dataProvider.length - 20, chart.dataProvider.length - 1);
+}
+
+
+
+
+
+setInterval(function () {
+        
+        // if mouse is down, stop all updates
+
+
+        // remove datapoint 
+
+        
+chart.dataProvider=generateChartData();
+// new dataProvider aus JSON
+chart.validateData();
+//确认新的 dataProvider 
+    }, 2000);
+
+
+
+
+
+
+// Start des Diagramm der Effinziennz 
+
+    var percentage;
+    var datalesen=function (){       //
+//alert("Programm fangt an!");
+
+//alert("jquery.js wird geladen!");
+        $.ajax({
+            async:false,
+            type:"GET",
+            url:"LvisEfficience.json",
+            dataType: "json",
+            success: function(data){
+            percentage=data.druck;
+}
+        })//ajax
+    };
+
+    datalesen();
+
+    //setInterval(function () {
+
+    var chart = c3.generate({
+        binto:'#chart',
+
+
+
+        data: {
+            columns: [
+                ['show',percentage],
+                ['dontshow', 1-percentage],
+            ],
+            type: 'donut',
+            order: null
+        },
+        color: {
+            pattern: ['#3EAD4B', '#EAECEC']//'#3EAD4B' Grün von percentage
+            // '#EAECEC' grau von 1-percentage
+
+        },
+        legend: {
+            show: false
+        },
+        donut: {
+            label: {
+                show: false
+            },
+
+            title: Math.round(percentage * 100)+"%",
+            width: 15,
+            expand: false
+        },
+        tooltip: {
+            show: false
+        }
+
+
+    });
+
+    //}, 2000);
+
+
+    setInterval(function () {
+
+
+        chart.unload();
+
+        datalesen();
+
+        chart.load({
+
+            columns: [
+                ['show',percentage],
+                ['dontshow', 1-percentage],
+            ],
+            donut: {
+                label: {
+                    show: false
+                },
+
+                title: Math.round(percentage * 100)+"%",
+                width: 15,
+                expand: false
+            },
+
+        });
+
+    }, 30000);
+
+    // baseline text properly
+
+    d3.select(".c3-chart-arcs-title")
+            .attr("dy", "0.3em")
+
+    d3.select(".c3-chart-arcs")
+            .append("text")
+            .text("Efficiency")
+            .attr("dy", "-2em")
+            .attr("dx", "-2em")
+
+
+            /* MAP*/
+
+
+            // svg path for target icon
+var targetSVG = "M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z";
+
+
+window.map = AmCharts.makeChart( "chartmap", {
+  type: "map",
+  "theme": "worldHigh",
+  dataProvider: {
+    map: "worldLow",
+    linkToObject: "Berlin",
+    images: [ {
+        id: "Berlin",
+        color:"#0056cc",
+        svgPath: targetSVG,
+        title: "Berlin",
+        latitude: 52.30,
+        longitude: 13.25,
+        scale: 1.5,
+        zoomLevel: 5,
+        zoomLongitude: 10,
+        zoomLatitude: 52,
+        
+
+        // Olpipeline!!!!!!!!!!!!!!!!!!!!!!!
+        lines: [ {
+        // from Berlin to Kiev
+          latitudes: [48.48, 52.30, 50.4422,55.7558], //Die Position in Latitude und Longtitude von Anfangs- und Endesation
+          longitudes: [2.2, 13.25, 30.5367,37.6176 ]
+        },
+        {
+        // from Berlin to Kiev
+          latitudes: [46.9480, 46.0514, 48.2116,55.7558], //Die Position in Latitude und Longtitude von Anfangs- und Endesation
+          longitudes: [7.4481, 14.5060, 17.1547,37.6176 ]
+        }       ],
+
+        images: [ {
+          label: "Pipelines In Europa",
+          //svgPath: planeSVG,
+          left: 100,
+          top: 45,
+          labelShiftY: 5,
+          color: "#CC0000",
+          labelColor: "#CC0000",
+          labelRollOverColor: "#CC0000",
+          labelFontSize: 20
+        }, {
+          label: "show Pipeline from Berlin to Paris",
+          left: 106,
+          top: 70,
+          labelColor: "#000000",     // Color Black 
+          labelRollOverColor: "#0056cc",    // teh Color when mous moves on
+          labelFontSize: 16,
+          linkToObject: "Paris"
+        },
+        {
+          label: "show Pipeline from Berlin to Kiev",
+          left: 106,
+          top: 90,   // Unter dem ersten Label
+          labelColor: "#000000",     // Color Black 
+          labelRollOverColor: "#0056cc",    // teh Color when mous moves on
+          labelFontSize: 16,
+          linkToObject: "Kiev"
+        }       ]
+      },
+
+      {
+        id: "Paris",
+        color: "#000000",  // Color Black
+        svgPath: targetSVG,
+        title: "Paris",
+        latitude: 48.48,
+        longitude: 2.2,
+        scale: 1.5,   // Icon Scale 
+        zoomLevel: 10,
+        zoomLongitude: 15.4492,
+        zoomLatitude: 50.2631,
+        color:"#0056cc",
+
+        lines: [ {
+          latitudes: [ 52.30,50, 48.48], // Konkrete Pipeline. Line in Array beschireben wird
+          longitudes: [ 13.25,4, 2.2]
+        }],
+        
+        linesSettings: {          // Pipeline Color
+        color: "#0056cc",
+        alpha: 4,
+        thickness: 5
+        },
+
+        images: [ {
+          label: "Pipeline from Berlin to Paris",
+          //svgPath: planeSVG,
+          left: 100,
+          top: 45,
+          labelShiftY: 5,
+          color: "#CC0000",
+          labelColor: "#CC0000",
+          labelRollOverColor: "#CC0000",
+          labelFontSize: 20
+        }, {
+          label: "Go Back",
+          left: 106,
+          top: 70,
+          labelColor: "#000000",
+          labelRollOverColor: "#CC0000",
+          labelFontSize: 11,
+          linkToObject: "Berlin"
+        } ]
+      }, 
+      {
+        id: "Kiev",
+        color: "#000000",  // Color Black
+        svgPath: targetSVG,
+        title: "Kiev",
+        latitude: 50.4422,
+        longitude: 30.5367,
+        scale: 1.5,   // Icon Scale 
+        zoomLevel: 10,
+        zoomLongitude: 30,
+        zoomLatitude: 50.2631,
+        color:"#0056cc",
+
+
+        lines: [ {
+          latitudes: [ 52.30,51, 50.4422], // Konkrete Pipeline. Line in Array beschireben wird
+          longitudes: [ 13.25,20, 30.5367]
+        }],
+        
+        linesSettings: {          // Pipeline Color
+        color: "#0056cc",
+        alpha: 4,
+        thickness: 5
+        },
+
+        images: [ {
+          label: "Pipeline from Berlin to Kiev",
+          //svgPath: planeSVG,
+          left: 100,
+          top: 45,
+          labelShiftY: 5,
+          color: "#CC0000",
+          labelColor: "#CC0000",
+          labelRollOverColor: "#CC0000",
+          labelFontSize: 11
+        }, {
+          label: "Go Back",
+          left: 106,
+          top: 90,
+          labelColor: "#000000",
+          labelRollOverColor: "#CC0000",
+          labelFontSize: 11,
+          linkToObject: "Berlin"
+        } ]
+      },
+      
+      
+      
+      
+      
+      
+      
+      {
+        svgPath: targetSVG,          // Stationen auf dem Map
+        title: "Brussels",
+        latitude: 50.8371,
+        longitude: 4.3676
+      }, {
+        svgPath: targetSVG,
+        title: "Prague",
+        latitude: 50.0878,
+        longitude: 14.4205
+      }, {
+        svgPath: targetSVG,
+        title: "Athens",
+        latitude: 37.9792,
+        longitude: 23.7166
+      }, {
+        svgPath: targetSVG,
+        title: "Reykjavik",
+        latitude: 64.1353,
+        longitude: -21.8952
+      }, {
+        svgPath: targetSVG,
+        title: "Dublin",
+        latitude: 53.3441,
+        longitude: -6.2675
+      }, {
+        svgPath: targetSVG,
+        title: "Oslo",
+        latitude: 59.9138,
+        longitude: 10.7387
+      }, {
+        svgPath: targetSVG,
+        title: "Lisbon",
+        latitude: 38.7072,
+        longitude: -9.1355
+      }, {
+        svgPath: targetSVG,
+        title: "Moscow",
+        latitude: 55.7558,
+        longitude: 37.6176
+      }, {
+        svgPath: targetSVG,
+        title: "Belgrade",
+        latitude: 44.8048,
+        longitude: 20.4781
+      }, {
+        svgPath: targetSVG,
+        title: "Bratislava",
+        latitude: 48.2116,
+        longitude: 17.1547
+      }, {
+        svgPath: targetSVG,
+        title: "Ljubljana",
+        latitude: 46.0514,
+        longitude: 14.5060
+      }, {
+        svgPath: targetSVG,
+        title: "Madrid",
+        latitude: 40.4167,
+        longitude: -3.7033
+      }, {
+        svgPath: targetSVG,
+        title: "Stockholm",
+        latitude: 59.3328,
+        longitude: 18.0645
+      }, {
+        svgPath: targetSVG,
+        title: "Bern",
+        latitude: 46.9480,
+        longitude: 7.4481
+      }
+    ]
+  },
+
+  areasSettings: {
+    unlistedAreasColor: "#626B74"  //Gray
+  },
+
+  imagesSettings: {
+    color: "#0056cc",      // Stationen Color
+    rollOverColor: "#CC0000",
+    selectedColor: "#000000"
+  },
+
+  linesSettings: {          // Pipeline Color
+    color: "#0056cc",
+    alpha: 0.4,
+    thickness: 5
+  },
+   
+  balloon:{
+   drop:true
+  },
+
+
+  backgroundZoomsToTop: true,
+  linesAboveImages: true,
+
+  "export": {
+    "enabled": true
+  }
+} );
+
+    
+</script>
+</body>
+</html>
